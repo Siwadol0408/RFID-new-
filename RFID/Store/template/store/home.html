@@ -1,0 +1,30 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+<title>Mechatronis store</title>
+<h2 align="center">แสดงข้อมูล</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ลำดับ</th>
+            <th scope="col">ID</th>
+            <th scope="col">ชื่อ</th>
+            <th scope="col">วันที่เพิ่ม</th>
+            <th scope="col">สถานะ</th>
+          
+        </tr>
+    </thead>
+    <tbody>
+    {% for object in object %}    
+      <tr class="table-active">
+        <th scope="row">{{object.id}}</th>
+        <td>{{object.tag_id}}</td>
+        <td>{{object.object_name}}</td>   
+        <td>{{object.add_date}}</td> 
+        <td>{{object.status}}</td>
+        <td><a href="">แก้ไข</a></td>      
+      </tr>
+    {% endfor %} 
+    </tbody>
+  </table>
+{% endblock %}
